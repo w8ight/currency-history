@@ -1,0 +1,13 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="http://<%= host %>:<%= port %>/styles.css" rel="stylesheet" />
+    <title><%= title %></title>
+<body>
+    <div id="<%= rootId %>"><%- content %></div>
+    <script>
+        window.__INITIAL_STATE__ = <%- serializedState %>
+    </script>
+    <script type="text/javascript" src="http://<%= host %>:<%= port %>/app.bundle.js"></script>
+</body>
+</html>

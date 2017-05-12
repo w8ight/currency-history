@@ -1,0 +1,83 @@
+$chart-color: #252631;
+$header-background: #59E477;
+$body-background: $header-background;
+$header-color: #fff;
+$active-background: #FCEF8E;
+
+body {
+    font-family: Arial, 'sans-serif';
+    padding: 0;
+    margin: 0;
+    background: $body-background;
+    text-align: center;
+    display: flex;
+    text-transform: uppercase;
+}
+
+#root {
+    margin: auto auto;
+    height: 100vh;
+}
+
+header {
+    height: 25vh;
+    font-size: 24px;
+    color: $header-color;
+    font-weight: 700;
+    display: flex;
+}
+
+nav {
+    margin: auto auto;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    opacity: .5;
+    transition: opacity 300ms linear;
+    &.active {
+        opacity: 1;
+        position: relative;
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -10px;
+            height: 5px;
+            background: $active-background;
+        }
+    }
+    &+li {
+        margin-left: 40px;
+    }
+    &:hover:not(.active) {
+        cursor: pointer;
+        opacity: .8;
+    }
+}
+
+canvas {
+    width: 100vw;
+    display: block;
+    position: relative;
+    background: #59e477;
+    background: -moz-linear-gradient(top, #59e477 0%, #5af1bf 100%);
+    background: -webkit-linear-gradient(top, #59e477 0%,#5af1bf 100%);
+    background: linear-gradient(to bottom, #59e477 0%,#5af1bf 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59e477', endColorstr='#5af1bf',GradientType=0 );
+}
+
+.content {
+    height: 75vh;
+    background: $chart-color;
+}
+
+.canvas-wrapper {
+}
